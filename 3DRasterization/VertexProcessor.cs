@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace _3DRasterization
 {
@@ -11,24 +12,24 @@ namespace _3DRasterization
         public Matrix4 obj2proj;
         public Matrix4 obj2view;
 
-        public VertexProcessor()
+        public VertexProcessor(List<Vector3> vectors, List<Vector4> vectors4)
         {
             obj2world = new Matrix4();
 
             //Увеличение объектов в сцене
-            Vector3 scale = new Vector3(.5f, .5f, .5f);
-            MultiplyByScale(scale);
+            // Vector3 scale = new Vector3(.5f, .5f, .5f);
+            MultiplyByScale(vectors[3]); //scale);
 
             //Поворот сцены
-            Vector3 rotation = new Vector3(0, 0, 0);
-            MultiplyByRotation(0, rotation);
+            Vector3 rotation = new Vector3(vectors4[1].X, vectors4[1].Y, vectors4[1].Z);
+            MultiplyByRotation(vectors4[1].W, rotation);
 
-            SetPerspective(100, 1.0f, 1.0f, 10000.0f); //SetPerspective(140, 1, 1, 5);
+            SetPerspective(vectors4[0].X, vectors4[0].Y, vectors4[0].Z, vectors4[0].W);//100, 1.0f, 1.0f, 10000.0f); //SetPerspective(140, 1, 1, 5);
 
             //Камера
-            Vector3 eye = new Vector3(.2f, 0f, 2f);  //(0, .6f, 1.0f) (0, -.2f, 2)
-            Vector3 center = new Vector3(0, 0, 0); //(0, 0, 0)
-            Vector3 up = new Vector3(0, 1, 0); //(0, 1, 0)
+            Vector3 eye = vectors[0];  //(0, .6f, 1.0f) (0, -.2f, 2)
+            Vector3 center = vectors[1]; //(0, 0, 0)
+            Vector3 up = vectors[2]; //(0, 1, 0)
             SetLookAt(eye, center, up);
 
             obj2view = world2view.MultiplyMatrixByMatrix(obj2world);

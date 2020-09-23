@@ -40,6 +40,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -62,9 +63,20 @@
     <Compile Include="Rasterization.cs" />
     <Compile Include="Scene.cs" />
     <Compile Include="VertexProcessor.cs" />
+    <Compile Include="vue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vue.Designer.cs">
+      <DependentUpon>vue.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="vue.resx">
+      <DependentUpon>vue.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
