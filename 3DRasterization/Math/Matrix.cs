@@ -124,27 +124,5 @@ namespace _3DRasterization
             }
             return finalMat;
         }
-
-        public Matrix4 Transpose()
-        {
-            Matrix4 transposedMatrix = new Matrix4();
-
-            for (int x = 0; x < mat.GetLength(0); x++)
-                for (int y = 0; y < mat.GetLength(1); y++)
-                {
-                    transposedMatrix.mat[y, x] = this.mat[x, y];
-                }
-
-            return transposedMatrix;
-        }
-
-        public void ShowMatrix()
-        {
-            Console.WriteLine("\nMacierz: ");
-            Console.WriteLine(mat[0, 0] + "\t" + mat[0, 1] + "\t" + mat[0, 2] + "\t" + mat[0, 3]);
-            Console.WriteLine(mat[1, 0] + "\t" + mat[1, 1] + "\t" + mat[1, 2] + "\t" + mat[1, 3]);
-            Console.WriteLine(mat[2, 0] + "\t" + mat[2, 1] + "\t" + mat[2, 2] + "\t" + mat[2, 3]);
-            Console.WriteLine(mat[3, 0] + "\t" + mat[3, 1] + "\t" + mat[3, 2] + "\t" + mat[3, 3]);
-        }
     }
 }
