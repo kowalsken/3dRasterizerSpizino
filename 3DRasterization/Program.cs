@@ -15,8 +15,7 @@ namespace _3DRasterization
             vue settingsForm = new vue();
 
             // Show the settings form
-            settingsForm.ShowDialog();
-            Console.ReadKey();
+            if (settingsForm.ShowDialog() == System.Windows.Forms.DialogResult.OK){}
         }
     }
 }

@@ -92,7 +92,7 @@ namespace _3DRasterization
             label8.Text = "Start render...";
             this.Update();
             #region Create collections for rasterize
-            Buffer buff = new Buffer(1500, 1500, Color.BlanchedAlmond);
+            Buffer buff = new Buffer(1500, 1500, Color.Aqua);
             List<Mesh> meshList = new List<Mesh>();
             List<Light> lightList = new List<Light>();
             Rasterization render = new Rasterization(buff);
