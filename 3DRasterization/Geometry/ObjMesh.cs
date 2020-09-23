@@ -27,21 +27,17 @@ namespace _3DRasterization.Geometry
 
         public void DrawMesh(Rasterization rasterizer, VertexProcessor processor, Light l)
         {
+            //Представление вершины в пространстве.
             for (int i = 0; i < indexes.Count; i += 3)
             {
-                rasterizer.Triangle(processor.tr(vertexes[indexes[i]].position), processor.tr(vertexes[indexes[i + 1]].position), processor.tr(vertexes[indexes[i + 2]].position), vertexes[indexes[i]], vertexes[indexes[i + 1]], vertexes[indexes[i + 2]], l, processor);
+                rasterizer.Triangle(processor.tr(vertexes[indexes[i]].position), processor.tr(vertexes[indexes[i + 1]].position), 
+                    processor.tr(vertexes[indexes[i + 2]].position), vertexes[indexes[i]], vertexes[indexes[i + 1]], vertexes[indexes[i + 2]], l, processor);
             }
         }
 
-        //policzenie wszystkich od razu w Scenie - nadpisywanie prawdopodobnie
+        //Соединение нормалей. Визуальное отображение объемности.
         public void MakeNormals()
         {
-            Vector3 v = new Vector3(0, 0, 0);
-            for (int i = 0; i < vertexes.Count; i++)
-            {
-                vertexes[i].normal = v;
-            }
-
             for (int i = 0; i < indexes.Count; i += 3)
             {
                 Vector3 U = vertexes[indexes[i + 1]].position - vertexes[indexes[i]].position;
@@ -51,11 +47,6 @@ namespace _3DRasterization.Geometry
                 vertexes[indexes[i]].normal += normal;
                 vertexes[indexes[i + 1]].normal += normal;
                 vertexes[indexes[i + 2]].normal += normal;
-            }
-
-            for (int i = 0; i < vertexes.Count; i++)
-            {
-                vertexes[i].normal.Normalize();
             }
         }
     }

@@ -4,9 +4,9 @@ namespace _3DRasterization
 {
     public class VertexProcessor
     {
-        public Matrix4 view2proj; //
-        public Matrix4 world2view; //
-        public Matrix4 obj2world; //
+        public Matrix4 view2proj;
+        public Matrix4 world2view;
+        public Matrix4 obj2world;
 
         public Matrix4 obj2proj;
         public Matrix4 obj2view;
@@ -35,7 +35,7 @@ namespace _3DRasterization
             obj2proj = view2proj.MultiplyMatrixByMatrix(obj2view);
         }
 
-        //tworzy macierz rzutowania view2proj
+        //Создание матрицы view2proj
         public void SetPerspective(double fovy, float aspect, float near, float far)
         {
             fovy *= Math.PI / 360;
@@ -49,7 +49,7 @@ namespace _3DRasterization
             view2proj = new Matrix4(v1, v2, v3, v4);
         }
 
-        //tworzy macierz rzutowanie world2view
+        //Создание матрицы world2view
         public void SetLookAt(Vector3 eye, Vector3 center, Vector3 up)
         {
             Vector3 f = center - eye;

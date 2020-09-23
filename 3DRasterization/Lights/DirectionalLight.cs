@@ -14,9 +14,9 @@ namespace _3DRasterization.Lights
 
         public Vector3 Calculate(VertexProcessor vert, Vertex v)
         {
-            shininess = 2f;
+            shininess = 1f;
             Vector3 diffuseColor = new Vector3(0, 0, 100);
-            Vector3 specularColor = new Vector3(100, 100, 100);
+            Vector3 specularColor = new Vector3(255, 0, 0);
 
             Vector3 N = vert.tr(v.normal).Normalize();
             Vector3 V = vert.tr(position).Normalize();

@@ -15,23 +15,23 @@ namespace _3DRasterization
             this.Z = z;
         }
 
-        #region Przeciązanie operatorów
+        #region Математичиские операции
 
-        //suma dwoch wektorow
+        //Сумма двух векторов
         public static Vector3 operator +(Vector3 v, Vector3 v2)
         {
             Vector3 vect;
             return vect = new Vector3(v.X + v2.X, v.Y + v2.Y, v.Z + v2.Z);
         }
 
-        //roznica dwoch wektorow
+        //Разница двух векторов
         public static Vector3 operator -(Vector3 v, Vector3 v2)
         {
             Vector3 vect;
             return vect = new Vector3(v.X - v2.X, v.Y - v2.Y, v.Z - v2.Z);
         }
 
-        //przemnozenie wartosci wektora przez skalar
+        //Умножение вектора на скаляр
         public static Vector3 operator *(Vector3 v, float scalar)
         {
             Vector3 vect;
@@ -39,9 +39,9 @@ namespace _3DRasterization
         }
         #endregion
 
-        #region Operacje na wektorach
+        #region Операции на векторах
 
-        //iloczyn wektorowy
+        //Добуток векторов
         public Vector3 Cross(Vector3 v)
         {
             Vector3 vect = new Vector3
@@ -51,16 +51,14 @@ namespace _3DRasterization
             return vect;
         }
 
-        //iloczyn skalarny dwoch wektorow np. do obliczenia cosinusa 
+        //Добуток скалярный двух векторов
         public float Dot(Vector3 v)
         {
             return this.X * v.X + this.Y * v.Y + this.Z * v.Z;
         }
 
-        //Returns the reflectiton vector given an incidence vector i and a normal vector n. The resulting vector is the identical number of components as the two input vectors.
-        //The normal vector n should be normalized. If n is normalized, the output vector will have the same length as the input incidence vector i.
 
-        public Vector3 Reflect(Vector3 I, Vector3 N) //i - promień przychodzący, n - odbity
+        public Vector3 Reflect(Vector3 I, Vector3 N) //i - промень проходной, n - отражение
         {
             N = N.Normalize();
             return I - (N * 2.0f) * I.Dot(N);
@@ -68,14 +66,14 @@ namespace _3DRasterization
             //return i - (n * 2.0f) * i.Dot(n);
         }
 
-        //długość wektora
+        //длина вектора
         public float GetLength()
         {
             return (float)Math.Sqrt(Dot(this));
         }
 
         const float eps = 0.0001f;
-        //normalizacja wektora
+        //нормализация вектора
         public Vector3 Normalize()
         {
             Vector3 v;

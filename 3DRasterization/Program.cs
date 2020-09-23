@@ -20,7 +20,7 @@ namespace _3DRasterization
             VertexProcessor vertex = new VertexProcessor();
             var objLoaderFactory = new ObjLoaderFactory();
             var objLoader = objLoaderFactory.Create();
-            Vector3 p0 = new Vector3(2f, 5f, 5f);
+            Vector3 p0 = new Vector3(1f, 1f, 1f);
             DirectionalLight light = new DirectionalLight(p0);
             #endregion
 
@@ -33,7 +33,7 @@ namespace _3DRasterization
             var fileStream = new FileStream(nameObj, FileMode.Open);
             var result = objLoader.Load(fileStream);
 
-            //ladowanie pozycji wierzcholkow
+            //Загрузка позиции вершин
             foreach (ObjLoader.Loader.Data.VertexData.Vertex l in result.Vertices)
             {
                 Vector3 pos = new Vector3(l.X, l.Y, l.Z);

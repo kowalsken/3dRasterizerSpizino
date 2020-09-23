@@ -2,11 +2,9 @@
 
 namespace _3DRasterization
 {
-    //macierz 4x4
+    //Матрица 4x4
     public class Matrix4
     {
-        //TO DO: Mnożenie macierzy 4x4 przez wektor 4-wymiarowy oraz przez 3 wymiarowy (po automatycznym uzupełnieniu go o w=1)
-
         public float[,] mat;
 
         public Matrix4()
@@ -91,7 +89,6 @@ namespace _3DRasterization
         public Vector4 MultiplyMatrixByVector(Vector4 vec)
         {
             float[] vector = new float[4];
-            //mnozenie tylko jesli ilosc kolumn jednej macierzy jest rowna ilosci wierszy drugiej
 
             for (int i = 0; i < mat.GetLength(0); i++) //m,n
             {
@@ -108,9 +105,7 @@ namespace _3DRasterization
 
         public Matrix4 MultiplyMatrixByMatrix(Matrix4 matrix2)
         {
-            //https://www.tutorialspoint.com/chash-program-to-multiply-two-matrices
             Matrix4 finalMat = new Matrix4();
-            //mnozenie tylko jesli ilosc kolumn jednej macierzy jest rowna ilosci wierszy drugiej
             for (int i = 0; i < mat.GetLength(0); i++) //m,n
             {
                 for (int j = 0; j < matrix2.mat.GetLength(1); j++) //p,q

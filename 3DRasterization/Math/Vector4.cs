@@ -6,7 +6,7 @@
         public float Y;
         public float Z;
         public float W;
-        public float[] vectorTable; //zmieni sie tylko jak zwracany jest Vector4 - w konstruktorze
+        public float[] vectorTable;
 
         public Vector4(float x, float y, float z, float w)
         {
