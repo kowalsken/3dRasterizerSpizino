@@ -27,7 +27,6 @@ namespace _3DRasterization
         //Механизм триангуляции
         public void Triangle(Vector3 pos1, Vector3 pos2, Vector3 pos3, Vertex v1, Vertex v2, Vertex v3, Light l, VertexProcessor vert)
         {
-            //Позиция точки относительно расширения
             float p1x = (pos1.X + 1) * buff.colorBuffer.Width * 0.5f;
             float p1y = (pos1.Y + 1) * buff.colorBuffer.Height * 0.5f;
 
@@ -37,11 +36,15 @@ namespace _3DRasterization
             float p3x = (pos3.X + 1) * buff.colorBuffer.Width * 0.5f;
             float p3y = (pos3.Y + 1) * buff.colorBuffer.Height * 0.5f;
 
-            //Максимальное, минимальное значение вершин.
             int minx = (int)Math.Min(p1x, Math.Min(p2x, p3x));
             int miny = (int)Math.Min(p1y, Math.Min(p2y, p3y));
             int maxx = (int)Math.Max(p1x, Math.Max(p2x, p3x));
             int maxy = (int)Math.Max(p1y, Math.Max(p2y, p3y));
+
+            minx = Math.Max(minx, 0);
+            maxx = Math.Min(maxx, buff.colorBuffer.Width - 1);
+            miny = Math.Max(miny, 0);
+            maxy = Math.Min(maxy, buff.colorBuffer.Height - 1);
 
             //Цикл для подсчета всех пикселей
             for (int x = minx; x <= maxx; x++)

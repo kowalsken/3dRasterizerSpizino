@@ -23,3 +23,5 @@ D:\Work\GitHub\3dRasterizerSpizino\3DRasterization\obj\Debug\3DRasterization.pdb
 C:\Users\Eugene\Desktop\3DRasterization\3Dasterization\3DRasterization\obj\Debug\_3DRasterization.vue.resources
 C:\Users\Eugene\Desktop\3DRasterization\3Dasterization\3DRasterization\obj\Debug\3DRasterization.csproj.GenerateResource.cache
 C:\Users\Eugene\Desktop\3DRasterization\3Dasterization\3DRasterization\obj\Debug\3DRasterization.csproj.CopyComplete
+D:\Work\GitHub\3dRasterizerSpizino\3DRasterization\obj\Debug\_3DRasterization.vue.resources
+D:\Work\GitHub\3dRasterizerSpizino\3DRasterization\obj\Debug\3DRasterization.csproj.GenerateResource.cache

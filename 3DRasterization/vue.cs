@@ -32,7 +32,7 @@ namespace _3DRasterization
 
             float x, y, z;
             try {  x = float.Parse(textBox1.Text); }
-            catch { x = .2f; textBox1.Text = "0.2"; }
+            catch { x = .2f; textBox1.Text = "0,2"; }
             try { y = float.Parse(textBox2.Text); }
             catch { y = 0f; textBox2.Text = "0"; }
             try {  z = float.Parse(textBox3.Text); }
@@ -53,11 +53,11 @@ namespace _3DRasterization
             catch { z = 0f; textBox9.Text = "0"; }
             vectors.Add(new Vector3(x, y, z));
             try { x = float.Parse(textBox11.Text); }
-            catch { x = .5f; textBox11.Text = "0.5"; }
+            catch { x = .5f; textBox11.Text = "0,5"; }
             try { y = float.Parse(textBox12.Text); }
-            catch { y = .5f; textBox12.Text = "0.5"; }
+            catch { y = .5f; textBox12.Text = "0,5"; }
             try { z = float.Parse(textBox13.Text); }
-            catch { z = .5f; textBox13.Text = "0.5"; }
+            catch { z = .5f; textBox13.Text = "0,5"; }
             vectors.Add(new Vector3(x, y, z));
             return vectors;
         }
