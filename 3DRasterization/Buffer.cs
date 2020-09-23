@@ -3,13 +3,13 @@ using System.Drawing.Imaging;
 
 namespace _3DRasterization
 {
-    //bufor - rozmiar, color, glebia
+    //Буфер - размер, цвет, глубина.
     public class Buffer
     {
         public Bitmap colorBuffer;
         public float[,] depthBuffer;
 
-        //konstruktor - utworz nowy obraz o podanych rozmiarach i kolorze tła
+        //Создание нового образа с указанными размера и цветом фона
         public Buffer(int size_X, int size_Y, Color col)
         {
             colorBuffer = new Bitmap(size_X, size_Y);
@@ -18,7 +18,7 @@ namespace _3DRasterization
             FillDepth();
         }
 
-        //wypełnij tło
+        //Зарполнить фон
         private void FillColor(Color col)
         {
             for (int i = 0; i < colorBuffer.Width; i++)
@@ -28,7 +28,7 @@ namespace _3DRasterization
                 }
         }
 
-        //wypelnij bufor glebi
+        //Заполнить буфер глубины
         private void FillDepth()
         {
             for (int i = 0; i < depthBuffer.GetLength(0); i++)
@@ -38,7 +38,7 @@ namespace _3DRasterization
                 }
         }
 
-        //zapis obrazu
+        //Сохранить файл
         public void SaveImage()
         {
             colorBuffer.Save("finalRender.png", ImageFormat.Png);

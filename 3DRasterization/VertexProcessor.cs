@@ -15,17 +15,17 @@ namespace _3DRasterization
         {
             obj2world = new Matrix4();
 
-            //skalowanie sceny
-            Vector3 scale = new Vector3(.7f, .7f, .7f);
+            //Увеличение объектов в сцене
+            Vector3 scale = new Vector3(.5f, .5f, .5f);
             MultiplyByScale(scale);
 
-            //obrot sceny
-            Vector3 rotation = new Vector3(0, 0, 1);
+            //Поворот сцены
+            Vector3 rotation = new Vector3(0, 0, 0);
             MultiplyByRotation(0, rotation);
 
             SetPerspective(100, 1.0f, 1.0f, 10000.0f); //SetPerspective(140, 1, 1, 5);
 
-            //kamera
+            //Камера
             Vector3 eye = new Vector3(.2f, 0f, 2f);  //(0, .6f, 1.0f) (0, -.2f, 2)
             Vector3 center = new Vector3(0, 0, 0); //(0, 0, 0)
             Vector3 up = new Vector3(0, 1, 0); //(0, 1, 0)
@@ -66,7 +66,7 @@ namespace _3DRasterization
             MultiplyByTranslation2(eye);
         }
 
-        //macierz translacji
+        //Матрица умножения2
         public void MultiplyByTranslation2(Vector3 v)
         {
             Vector4 v1 = new Vector4(1, 0, 0, 0);
@@ -79,7 +79,7 @@ namespace _3DRasterization
             world2view = world2view.MultiplyMatrixByMatrix(m);
         }
 
-        //macierz skalowania
+        //Матрица умножения
         public void MultiplyByScale(Vector3 v)
         {
             Vector4 v1 = new Vector4(v.X, 0, 0, 0);
@@ -92,7 +92,7 @@ namespace _3DRasterization
             obj2world = obj2world.MultiplyMatrixByMatrix(m);
         }
 
-        //macierz rotacji
+        //Поворотная матрица 
         public void MultiplyByRotation(double a, Vector3 v)
         {
             float s = (float)Math.Sin((a * Math.PI) / 180);
@@ -108,7 +108,7 @@ namespace _3DRasterization
             obj2world = obj2world.MultiplyMatrixByMatrix(m);
         }
 
-        //przemnozenie wierzcholka przez macierze
+        //Умножение вершины на матрицу
         public Vector3 tr(Vector3 vertexPosition)
         {
             Vector4 verPos = new Vector4(vertexPosition);

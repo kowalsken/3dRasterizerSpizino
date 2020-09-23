@@ -5,13 +5,17 @@ namespace _3DRasterization
 {
     public class Rasterization
     {
-        Buffer buff;
+        Buffer buff; //Создание класса Buffer
 
+
+        //Передеча в функцию
         public Rasterization(Buffer Buff)
         {
             this.buff = Buff;
         }
 
+
+        //Ограничение на значение цвета
         private int maxCol(int c)
         {
             if (c > 255) return 255;
@@ -20,6 +24,7 @@ namespace _3DRasterization
             return c;
         }
 
+        //Механизм триангуляции
         public void Triangle(Vector3 pos1, Vector3 pos2, Vector3 pos3, Vertex v1, Vertex v2, Vertex v3, Light l, VertexProcessor vert)
         {
             float p1x = (pos1.X + 1) * buff.colorBuffer.Width * 0.5f;
@@ -56,16 +61,18 @@ namespace _3DRasterization
             if (dy23 < 0 || (dy23 == 0 && dx23 > 0)) tl2 = true;
             if (dy31 < 0 || (dy31 == 0 && dx31 > 0)) tl3 = true;
 
+            //Цикл для подсчета всех пикселей
             for (int x = minx; x <= maxx; x++)
                 for (int y = miny; y <= maxy; y++)
                 {
+                    //Принадженость пикселя к видимой области объекта
                     if ((((p1x - p2x) * (y - p1y) - (p1y - p2y) * (x - p1x) > 0 && !tl1) || ((p1x - p2x) * (y - p1y) - (p1y - p2y) * (x - p1x) >= 0 && tl1))
                     &&
                         (((p2x - p3x) * (y - p2y) - (p2y - p3y) * (x - p2x) > 0 && !tl2) || ((p2x - p3x) * (y - p2y) - (p2y - p3y) * (x - p2x) >= 0 && tl2))
                     &&
                         (((p3x - p1x) * (y - p3y) - (p3y - p1y) * (x - p3x) > 0 && !tl3) || ((p3x - p1x) * (y - p3y) - (p3y - p1y) * (x - p3x) >= 0 && tl3)))
                     {
-                        //WSPOLRZEDNE BARYCENTRYCZNE
+                        //Барицентрические координаты, используються что бы определить, принадлежат ли координаты текущего пикселя какому-либо из треугольников
                         float lambda1 = (((p2y - p3y) * (x - p3x)) + ((p3x - p2x) * (y - p3y))) /
                                     (((p2y - p3y) * (p1x - p3x)) + ((p3x - p2x) * (p1y - p3y)));
 
@@ -73,12 +80,12 @@ namespace _3DRasterization
                                         (((p3y - p1y) * (p2x - p3x)) + ((p1x - p3x) * (p2y - p3y)));
                         float lambda3 = 1 - lambda1 - lambda2;
 
-                        //bufor głębokości
+                        //Буфер глубины, расчет градиента
                         float depth = lambda1 * pos1.Z + lambda2 * pos2.Z + lambda3 * pos3.Z;
 
                         if (depth < buff.depthBuffer[x, y])
                         {
-                            //OSWIETLENIE PER VERTEX
+                            //Свечение на вершину
                             Vector3 ambient = new Vector3(50, 0, 0);
                             Vector3 color = (v1.light * lambda1) + (v2.light * lambda2) + (v3.light * lambda3);
                             Color col = Color.FromArgb(maxCol((int)(color.X + ambient.X)), maxCol((int)(color.Y + ambient.Y)), maxCol((int)(color.Z + ambient.Z)));

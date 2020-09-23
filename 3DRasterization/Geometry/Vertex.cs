@@ -12,6 +12,5 @@
             normal = new Vector3(0, 0, 0);
             position = pos;
         }
-
     }
 }

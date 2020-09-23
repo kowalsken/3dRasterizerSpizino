@@ -13,3 +13,11 @@ C:\Users\Eugene\Desktop\3DRasterization\3Dasterization\3DRasterization\obj\Debug
 C:\Users\Eugene\Desktop\3DRasterization\3Dasterization\3DRasterization\obj\Debug\3DRasterization.csproj.CopyComplete
 C:\Users\Eugene\Desktop\3DRasterization\3Dasterization\3DRasterization\obj\Debug\3DRasterization.exe
 C:\Users\Eugene\Desktop\3DRasterization\3Dasterization\3DRasterization\obj\Debug\3DRasterization.pdb
+D:\Work\GitHub\3dRasterizerSpizino\3DRasterization\bin\Debug\3DRasterization.exe.config
+D:\Work\GitHub\3dRasterizerSpizino\3DRasterization\bin\Debug\3DRasterization.exe
+D:\Work\GitHub\3dRasterizerSpizino\3DRasterization\bin\Debug\3DRasterization.pdb
+D:\Work\GitHub\3dRasterizerSpizino\3DRasterization\obj\Debug\3DRasterization.csprojAssemblyReference.cache
+D:\Work\GitHub\3dRasterizerSpizino\3DRasterization\obj\Debug\3DRasterization.csproj.CoreCompileInputs.cache
+D:\Work\GitHub\3dRasterizerSpizino\3DRasterization\obj\Debug\3DRasterization.csproj.CopyComplete
+D:\Work\GitHub\3dRasterizerSpizino\3DRasterization\obj\Debug\3DRasterization.exe
+D:\Work\GitHub\3dRasterizerSpizino\3DRasterization\obj\Debug\3DRasterization.pdb
