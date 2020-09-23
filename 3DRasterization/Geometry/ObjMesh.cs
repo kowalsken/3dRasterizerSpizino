@@ -33,11 +33,6 @@ namespace _3DRasterization.Geometry
             }
         }
 
-        public void DrawMesh(Rasterization rasterizer, VertexProcessor processor)
-        {
-            throw new NotImplementedException();
-        }
-
         //policzenie wszystkich od razu w Scenie - nadpisywanie prawdopodobnie
         public void MakeNormals()
         {

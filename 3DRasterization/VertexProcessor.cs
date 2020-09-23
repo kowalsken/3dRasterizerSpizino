@@ -67,19 +67,6 @@ namespace _3DRasterization
         }
 
         //macierz translacji
-        public void MultiplyByTranslation(Vector3 v)
-        {
-            Vector4 v1 = new Vector4(1, 0, 0, 0);
-            Vector4 v2 = new Vector4(0, 1, 0, 0);
-            Vector4 v3 = new Vector4(0, 0, 1, 0);
-            Vector4 v4 = new Vector4(v.X, v.Y, v.Z, 1);
-
-            Matrix4 m = new Matrix4(v1, v2, v3, v4);
-
-            obj2world = obj2world.MultiplyMatrixByMatrix(m);
-        }
-
-        //macierz translacji
         public void MultiplyByTranslation2(Vector3 v)
         {
             Vector4 v1 = new Vector4(1, 0, 0, 0);

@@ -9,14 +9,6 @@ namespace _3DRasterization
         public Bitmap colorBuffer;
         public float[,] depthBuffer;
 
-        //konstruktor domyślny - wypełnia cały obraz na biało
-        public Buffer()
-        {
-            colorBuffer = new Bitmap(500, 500);
-            FillColor(Color.White);
-            depthBuffer = new float[500, 500];
-        }
-
         //konstruktor - utworz nowy obraz o podanych rozmiarach i kolorze tła
         public Buffer(int size_X, int size_Y, Color col)
         {
@@ -36,15 +28,6 @@ namespace _3DRasterization
                 }
         }
 
-        public void ClearColor()
-        {
-            for (int i = 0; i < colorBuffer.Width; i++)
-                for (int j = 0; j < colorBuffer.Height; j++)
-                {
-                    colorBuffer.SetPixel(i, j, Color.White);
-                }
-        }
-
         //wypelnij bufor glebi
         private void FillDepth()
         {
@@ -52,15 +35,6 @@ namespace _3DRasterization
                 for (int j = 0; j < depthBuffer.GetLength(1); j++)
                 {
                     depthBuffer[i, j] = 1;
-                }
-        }
-
-        public void ClearDepth()
-        {
-            for (int i = 0; i < depthBuffer.GetLength(0); i++)
-                for (int j = 0; j < depthBuffer.GetLength(1); j++)
-                {
-                    depthBuffer[i, j] = 0.0f;
                 }
         }
 

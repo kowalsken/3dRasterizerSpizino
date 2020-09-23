@@ -51,7 +51,6 @@
     <Compile Include="Buffer.cs" />
     <Compile Include="Geometry\Mesh.cs" />
     <Compile Include="Geometry\ObjMesh.cs" />
-    <Compile Include="Geometry\SimpleTriangle.cs" />
     <Compile Include="Geometry\Vertex.cs" />
     <Compile Include="Lights\DirectionalLight.cs" />
     <Compile Include="Lights\Light.cs" />
