@@ -33,21 +33,6 @@ namespace _3DRasterization.Geometry
             }
         }
 
-        //dla liczenia na biezaco
-        public void MakeNormals(int first, int second, int third)
-        {
-            Vector3 U = vertexes[indexes[second]].position - vertexes[indexes[first]].position;
-            Vector3 V = vertexes[indexes[third]].position - vertexes[indexes[first]].position;
-
-            Vector3 normal = U.Cross(V);
-            normal = normal.Normalize();
-            normal.showVector();
-            vertexes[indexes[first]].normal = normal;
-            vertexes[indexes[second]].normal = normal;
-            vertexes[indexes[third]].normal = normal;
-
-        }
-
         public void DrawMesh(Rasterization rasterizer, VertexProcessor processor)
         {
             throw new NotImplementedException();
