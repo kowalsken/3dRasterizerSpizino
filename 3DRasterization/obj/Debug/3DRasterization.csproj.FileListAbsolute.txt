@@ -6,3 +6,10 @@ D:\Rasterization\3DRasterization\3DRasterization\3DRasterization\bin\Debug\3DRas
 D:\Rasterization\3DRasterization\3DRasterization\3DRasterization\obj\Debug\3DRasterization.exe
 D:\Rasterization\3DRasterization\3DRasterization\3DRasterization\obj\Debug\3DRasterization.pdb
 D:\Rasterization\3DRasterization\3DRasterization\3DRasterization\obj\Debug\3DRasterization.csproj.CopyComplete
+C:\Users\Eugene\Desktop\3DRasterization\3Dasterization\3DRasterization\bin\Debug\3DRasterization.exe.config
+C:\Users\Eugene\Desktop\3DRasterization\3Dasterization\3DRasterization\bin\Debug\3DRasterization.exe
+C:\Users\Eugene\Desktop\3DRasterization\3Dasterization\3DRasterization\bin\Debug\3DRasterization.pdb
+C:\Users\Eugene\Desktop\3DRasterization\3Dasterization\3DRasterization\obj\Debug\3DRasterization.csprojAssemblyReference.cache
+C:\Users\Eugene\Desktop\3DRasterization\3Dasterization\3DRasterization\obj\Debug\3DRasterization.csproj.CopyComplete
+C:\Users\Eugene\Desktop\3DRasterization\3Dasterization\3DRasterization\obj\Debug\3DRasterization.exe
+C:\Users\Eugene\Desktop\3DRasterization\3Dasterization\3DRasterization\obj\Debug\3DRasterization.pdb

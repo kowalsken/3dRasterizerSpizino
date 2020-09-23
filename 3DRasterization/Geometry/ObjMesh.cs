@@ -10,13 +10,8 @@ namespace _3DRasterization.Geometry
         public List<int> indexes;
         public List<Vector3> norm;
 
-        FileStream file;
-        StreamWriter stream;
-
         public ObjMesh()
         {
-            file = new FileStream("Vertexes.txt", FileMode.OpenOrCreate);
-            stream = new StreamWriter(file);
             vertexes = new List<Vertex>();
             indexes = new List<int>();
             norm = new List<Vector3>();
@@ -35,10 +30,7 @@ namespace _3DRasterization.Geometry
             for (int i = 0; i < indexes.Count; i += 3)
             {
                 rasterizer.Triangle(processor.tr(vertexes[indexes[i]].position), processor.tr(vertexes[indexes[i + 1]].position), processor.tr(vertexes[indexes[i + 2]].position), vertexes[indexes[i]], vertexes[indexes[i + 1]], vertexes[indexes[i + 2]], l, processor);
-                stream.WriteLine("Indeks: " + indexes[i] + " " + indexes[i + 1] + " " + indexes[i + 2]);
-                stream.WriteLine("Wierzchołki: " + vertexes[indexes[i]].position.ToString() + " | " + vertexes[indexes[i + 1]].position.ToString() + " | " + vertexes[indexes[i + 2]].position.ToString());
             }
-            stream.Close();
         }
 
         //dla liczenia na biezaco
@@ -54,7 +46,6 @@ namespace _3DRasterization.Geometry
             vertexes[indexes[second]].normal = normal;
             vertexes[indexes[third]].normal = normal;
 
-            stream.WriteLine("Normalne dla ścian: " + indexes[first] + " ; " + indexes[second] + " ; " + indexes[third] + "\t" + vertexes[indexes[first]].normal.ToString() + " | " + vertexes[indexes[second]].normal.ToString() + " | " + vertexes[indexes[third]].normal.ToString());
         }
 
         public void DrawMesh(Rasterization rasterizer, VertexProcessor processor)
@@ -85,7 +76,6 @@ namespace _3DRasterization.Geometry
             for (int i = 0; i < vertexes.Count; i++)
             {
                 vertexes[i].normal.Normalize();
-                stream.WriteLine("Normalne dla ścian: " + vertexes[i].normal.ToString());
             }
         }
     }

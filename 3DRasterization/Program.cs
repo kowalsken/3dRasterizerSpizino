@@ -24,8 +24,6 @@ namespace _3DRasterization
             DirectionalLight light = new DirectionalLight(p0);
             #endregion
 
-            FileStream stream = new FileStream("Faces.txt", FileMode.OpenOrCreate);
-            StreamWriter writer = new StreamWriter(stream);
 
             #region Dodanie obiektów do sceny
             ObjMesh obj = new ObjMesh();
@@ -47,20 +45,14 @@ namespace _3DRasterization
 
             foreach (ObjLoader.Loader.Data.Elements.Group n in result.Groups)
             {
-                int orderNumber = 0;
                 foreach (ObjLoader.Loader.Data.Elements.Face f in n.Faces)
                 {
-                    writer.WriteLine("Face: " + orderNumber);
                     for (int i = 0; i < f._vertices.Count; i++)
                     {
                         indexes.Add(f._vertices[i].VertexIndex - 1);
-                        writer.Write((f._vertices[i].VertexIndex - 1) + " ");
                     }
-                    orderNumber++;
-                    writer.WriteLine("\n");
                 }
             }
-            writer.Close();
 
             lightList.Add(light);
             obj.indexes = indexes;
@@ -70,7 +62,7 @@ namespace _3DRasterization
             #endregion
             buff.SaveImage();
 
-            Console.WriteLine("\nRasterization Complete.");
+            Console.WriteLine("Rasterization Complete.");
             Console.ReadKey();
         }
     }
