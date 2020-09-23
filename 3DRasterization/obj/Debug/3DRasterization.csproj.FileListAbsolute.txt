@@ -1,0 +1,8 @@
+D:\Rasterization\3DRasterization\3DRasterization\3DRasterization\obj\Debug\3DRasterization.csprojAssemblyReference.cache
+D:\Rasterization\3DRasterization\3DRasterization\3DRasterization\obj\Debug\3DRasterization.csproj.CoreCompileInputs.cache
+D:\Rasterization\3DRasterization\3DRasterization\3DRasterization\bin\Debug\3DRasterization.exe.config
+D:\Rasterization\3DRasterization\3DRasterization\3DRasterization\bin\Debug\3DRasterization.exe
+D:\Rasterization\3DRasterization\3DRasterization\3DRasterization\bin\Debug\3DRasterization.pdb
+D:\Rasterization\3DRasterization\3DRasterization\3DRasterization\obj\Debug\3DRasterization.exe
+D:\Rasterization\3DRasterization\3DRasterization\3DRasterization\obj\Debug\3DRasterization.pdb
+D:\Rasterization\3DRasterization\3DRasterization\3DRasterization\obj\Debug\3DRasterization.csproj.CopyComplete
