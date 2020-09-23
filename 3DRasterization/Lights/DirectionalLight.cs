@@ -12,7 +12,6 @@ namespace _3DRasterization.Lights
             this.position = pos;
         }
 
-        //dla Gorauda
         public Vector3 Calculate(VertexProcessor vert, Vertex v)
         {
             shininess = 2f;
